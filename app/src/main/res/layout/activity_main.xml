@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_2"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/toolbar"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <ImageView
+        android:id="@+id/fpolyLogo"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:src="@drawable/fpt_polytechnic"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar" />
+
+    <Button
+        android:id="@+id/btnPhongBan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/baseline_home_work_24"
+        android:backgroundTint="@color/Logo_BG"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Phòng ban"
+        app:layout_constraintTop_toBottomOf="@id/fpolyLogo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:textSize="32sp"
+        />
+    <Button
+        android:id="@+id/btnNhanVien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/baseline_groups_24"
+        android:backgroundTint="@color/Logo_BG"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Nhân viên"
+        app:layout_constraintTop_toBottomOf="@id/btnPhongBan"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:textSize="32sp"
+        />
+
+    <Button
+        android:id="@+id/btnDangXuat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/baseline_logout_24"
+        android:backgroundTint="@color/Logo_BG"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Đăng xuất"
+        app:layout_constraintTop_toBottomOf="@id/btnNhanVien"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:textSize="32sp"
+        />
+    <Button
+        android:id="@+id/btnThoat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/baseline_exit_to_app_24"
+        android:backgroundTint="@color/Logo_BG"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Thoát"
+        app:layout_constraintTop_toBottomOf="@id/btnDangXuat"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:textSize="32sp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

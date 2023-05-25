@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/baseline_search_24"
+        android:title="SEARCH"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/menu_more"
+        android:icon="@drawable/baseline_more_vert_24"
+        android:title="MORE"
+        app:showAsAction="always">
+        <menu>
+
+            <item
+                android:id="@+id/menu_welcome"
+                android:icon="@drawable/baseline_info_24"
+                android:title="Welcome Screen"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/menu_about_me"
+                android:icon="@drawable/baseline_info_24"
+                android:title="About Me"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/menu_logout"
+                android:icon="@drawable/baseline_logout_24"
+                android:title="Đăng xuất"
+                app:showAsAction="ifRoom" />
+        </menu>
+    </item>
+
+</menu>
