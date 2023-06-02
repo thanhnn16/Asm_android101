@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         btnPhongBan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Phòng ban", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, PhongBan.class));
             }
         });
 

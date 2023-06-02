@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/login_bk"
     tools:context=".SignupScreen">
 
@@ -15,7 +15,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="8dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <TextView
             android:layout_width="wrap_content"
@@ -25,48 +26,79 @@
             android:textColor="@color/Logo_BG"
             android:textSize="50sp" />
 
-
-        <EditText
-            android:id="@+id/edtSignupEmail"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
-            android:drawableStart="@drawable/baseline_email_24"
-            android:drawablePadding="5dp"
-            android:fontFamily="@font/roboto"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="10dp"
             android:hint="@string/user_email"
-            android:inputType="textEmailAddress"
-            android:textSize="20sp" />
+            app:counterEnabled="true"
+            app:helperText="Nhập email của bạn *"
+            app:helperTextTextColor="@color/Red">
 
-        <EditText
-            android:id="@+id/edtSignupPw"
+            <EditText
+                android:id="@+id/edtSignupEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="emailAddress"
+                android:drawableStart="@drawable/baseline_email_24"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/roboto"
+                android:inputType="textEmailAddress"
+                android:textSize="20sp"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="16dp"
-            android:drawableStart="@drawable/baseline_lock_24"
-            android:drawablePadding="5dp"
-            android:fontFamily="@font/roboto"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="10dp"
             android:hint="@string/password"
-            android:inputType="textPassword"
-            android:textSize="20sp" />
+            app:counterEnabled="true"
+            app:endIconMode="password_toggle"
+            app:helperText="Ít nhất 6 ký tự, gồm A-Z, a-z, 0-9 *"
+            app:helperTextTextColor="@color/Red">
 
-        <EditText
-            android:id="@+id/edtSingupRePw"
+            <EditText
+                android:id="@+id/edtSignupPw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="password"
+                android:drawableStart="@drawable/baseline_lock_24"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/roboto"
+                android:inputType="textPassword"
+                android:textSize="20sp"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="16dp"
-            android:drawableStart="@drawable/baseline_lock_24"
-            android:drawablePadding="5dp"
-            android:fontFamily="@font/roboto"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="10dp"
             android:hint="@string/re_enter_pw"
-            android:inputType="textPassword"
-            android:textSize="20sp" />
+            app:counterEnabled="true"
+            app:endIconMode="password_toggle"
+            app:helperText="Mật khẩu phải trùng nhau *"
+            app:helperTextTextColor="@color/Red">
+
+            <EditText
+                android:id="@+id/edtSingupRePw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="password"
+                android:drawableStart="@drawable/baseline_lock_24"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/roboto"
+                android:inputType="textPassword"
+                android:textSize="20sp"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -81,8 +113,8 @@
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_gravity="end"
-            android:layout_marginEnd="16dp"
             android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/button_bg_ripple">
 
             <TextView
@@ -101,11 +133,11 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_centerInParent="true"
-                app:lottie_rawRes="@raw/loading_blue"
-                app:lottie_colorFilter="@color/camdat"
                 android:visibility="gone"
                 app:lottie_autoPlay="false"
-                app:lottie_loop="true" />
+                app:lottie_colorFilter="@color/camdat"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/loading_blue" />
 
         </RelativeLayout>
 
