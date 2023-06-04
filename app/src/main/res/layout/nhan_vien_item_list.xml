@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:padding="10dp"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="start"
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -14,19 +14,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mã NV: "
             android:fontFamily="@font/roboto_bold"
+            android:text="Mã NV: "
             android:textColor="@color/Red"
-            android:textSize="32sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/txt_maNV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/Red"
             android:fontFamily="@font/roboto_bold"
-            android:textSize="32sp" />
+            android:textColor="@color/Red"
+            android:textSize="16sp" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,17 +36,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Họ tên: "
             android:fontFamily="@font/roboto_bold"
-            android:textSize="32sp" />
+            android:text="Họ tên: "
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/txt_tenNV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
-            android:textSize="32sp" />
+            android:textSize="16sp" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,15 +56,43 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phòng ban: "
             android:fontFamily="@font/roboto_bold"
-            android:textSize="32sp" />
+            android:text="Phòng ban: "
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/txt_phongBanNV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
-            android:textSize="32sp" />
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_capNhat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:drawableLeft="@drawable/baseline_edit_24"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Cập nhật"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_xoa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:drawableLeft="@drawable/baseline_delete_forever_24"
+            android:fontFamily="@font/roboto_bold"
+
+            android:text="Xoá"
+            android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>

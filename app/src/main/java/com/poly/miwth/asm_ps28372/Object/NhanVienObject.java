@@ -1,6 +1,8 @@
 package com.poly.miwth.asm_ps28372.Object;
 
-public class NhanVienObject {
+import java.io.Serializable;
+
+public class NhanVienObject implements Serializable {
     private String maNV;
     private String hoTenNV;
     private String phongBan;

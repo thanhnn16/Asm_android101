@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ListNhanVien">
+
     <include
         android:id="@+id/tool_bar"
         layout="@layout/toolbar" />
@@ -13,26 +14,30 @@
         android:id="@+id/btn_themNV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Thêm nhân viên mới"
-        app:layout_constraintTop_toBottomOf="@+id/tool_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
         android:backgroundTint="@color/camdat"
-        android:textColor="@color/Logo_BG"
-        android:textSize="24sp"
         android:fontFamily="@font/roboto_bold"
-        />
+        android:text="Thêm nhân viên mới"
+        android:textColor="@color/Logo_BG"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txt_thongBao"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:text="Chưa có dữ liệu nhân viên"
+        android:textColor="@color/Red"
+        android:textSize="32sp"
+        android:visibility="gone" />
 
     <ListView
         android:id="@+id/lv_NV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/btn_themNV"
-        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="32dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
