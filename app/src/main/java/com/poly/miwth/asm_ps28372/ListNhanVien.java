@@ -99,6 +99,23 @@ public class ListNhanVien extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu, menu);
+        // search bar search filter list
+        MenuItem searchItem = menu.findItem(R.id.menu_search);
+        androidx.appcompat.widget.SearchView searchView = (androidx.appcompat.widget.SearchView) searchItem.getActionView();
+        searchView.setQueryHint("Tìm kiếm nhân viên");
+        searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                listAdapter.getFilter().filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                listAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
         return true;
     }
 

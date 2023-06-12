@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import com.poly.miwth.asm_ps28372.ListNhanVien;
@@ -16,7 +18,7 @@ import com.poly.miwth.asm_ps28372.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NhanVienAdapter extends BaseAdapter {
+public class NhanVienAdapter extends BaseAdapter implements Filterable {
     Context context;
     List<NhanVienObject> list = new ArrayList<>();
 
@@ -72,5 +74,38 @@ public class NhanVienAdapter extends BaseAdapter {
         });
 
         return convertView;
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new NhanVienFilter();
+    }
+
+    class NhanVienFilter extends Filter {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            FilterResults results = new FilterResults();
+            List<NhanVienObject> filteredList = new ArrayList<>();
+            if (constraint == null || constraint.length() == 0) {
+                results.count = list.size();
+                results.values = list;
+            } else {
+                String searchStr = constraint.toString().toLowerCase();
+                for (NhanVienObject nv : list) {
+                    if (nv.getHoTenNV().toLowerCase().contains(searchStr) || nv.getMaNV().toLowerCase().contains(searchStr) || nv.getPhongBan().toLowerCase().contains(searchStr)) {
+                        filteredList.add(nv);
+                    }
+                }
+                results.count = filteredList.size();
+                results.values = filteredList;
+            }
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            list = (List<NhanVienObject>) results.values;
+            notifyDataSetChanged();
+        }
     }
 }
