@@ -19,6 +19,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -98,22 +99,22 @@ public class ListNhanVien extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu, menu);
+        menuInflater.inflate(R.menu.nhanvien_menu, menu);
         // search bar search filter list
         MenuItem searchItem = menu.findItem(R.id.menu_search);
-        androidx.appcompat.widget.SearchView searchView = (androidx.appcompat.widget.SearchView) searchItem.getActionView();
+       SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setQueryHint("Tìm kiếm nhân viên");
         searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                listAdapter.getFilter().filter(query);
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                listAdapter.getFilter().filter(newText);
-                return false;
+                CharSequence searchText = newText.toLowerCase();
+                listAdapter.getFilter().filter(searchText);
+                return true;
             }
         });
         return true;

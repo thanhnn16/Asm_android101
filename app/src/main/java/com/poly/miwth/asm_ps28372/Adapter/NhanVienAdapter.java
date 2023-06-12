@@ -89,6 +89,7 @@ public class NhanVienAdapter extends BaseAdapter implements Filterable {
             if (constraint == null || constraint.length() == 0) {
                 results.count = list.size();
                 results.values = list;
+                filteredList.addAll(list);
             } else {
                 String searchStr = constraint.toString().toLowerCase();
                 for (NhanVienObject nv : list) {
@@ -104,7 +105,10 @@ public class NhanVienAdapter extends BaseAdapter implements Filterable {
 
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            list = (List<NhanVienObject>) results.values;
+//            list = (List<NhanVienObject>) results.values;
+//            notifyDataSetChanged();
+            list.clear();
+            list.addAll((List<NhanVienObject>) results.values);
             notifyDataSetChanged();
         }
     }
