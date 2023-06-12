@@ -34,6 +34,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListNhanVien extends AppCompatActivity {
     ArrayList<NhanVienObject> list = new ArrayList<>();
@@ -112,8 +113,7 @@ public class ListNhanVien extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                CharSequence searchText = newText.toLowerCase();
-                listAdapter.getFilter().filter(searchText);
+                listAdapter.getFilter().filter(newText);
                 return true;
             }
         });
